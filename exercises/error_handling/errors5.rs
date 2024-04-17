@@ -22,14 +22,32 @@
 // Execute `rustlings hint errors5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+/*该程序使用错误4中代码的更改版本。
+//
+本练习使用了一些概念，我们直到后面才能了解这些概念
+当然，比如“盒子”和“来自”特征。了解并不重要
+它们现在很详细，但如果您愿意，可以提前阅读。现在，想想
+将“Box<dyn ???>”类型作为“我想要任何???的东西”类型，其中，
+鉴于 Rust 通常的运行时安全标准，应该会让你感到震惊
+有点宽大！
+//
+简而言之，盒子的这个特殊用例适用于您想要拥有
+值，你只关心它是一个实现特定
+特性。为此，The Box 被声明为 Box<dyn Trait 类型>其中 Trait 是
+编译器在该上下文中使用的任何值上查找的特征。为此
+练习，该上下文是可以在
+结果。
+//
+我们可以用来描述这两个错误吗？换句话说，是否有特征
+这两个错误都实现了哪些？ */
+
 
 use std::error;
 use std::fmt;
 use std::num::ParseIntError;
 
 // TODO: update the return type of `main()` to make this compile.
-fn main() -> Result<(), Box<dyn ???>> {
+fn main() -> Result<(), Box<dyn error::Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);

@@ -6,14 +6,15 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-struct Wrapper {
-    value: u32,
+
+struct Wrapper <T>{
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+impl <T> Wrapper<T> {
+    pub fn new(value: T) -> Self {//Self：实现Trait的类型的别名
+        //self：方法参数 fn f(self) {}，等价于fn f(self: Self) {}
         Wrapper { value }
     }
 }

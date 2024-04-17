@@ -7,7 +7,9 @@
 // Execute `rustlings hint traits1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// 这段Rust代码要求实现一个名为AppendBar的trait，
+// 并为String类型实现该trait。AppendBartrait包含一个函数，
+// 该函数将"Bar"追加到任何实现此trait的对象中。
 
 trait AppendBar {
     fn append_bar(self) -> Self;
@@ -15,6 +17,10 @@ trait AppendBar {
 
 impl AppendBar for String {
     // TODO: Implement `AppendBar` for type `String`.
+    fn append_bar(self) -> Self {
+        self + "Bar"
+    }
+
 }
 
 fn main() {
