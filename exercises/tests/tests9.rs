@@ -27,14 +27,22 @@
 //
 // You should NOT modify any existing code except for adding two lines of attributes.
 
-// I AM NOT DONE
+/*在本练习中，您的任务是使测试用例能够调用 “my_demo_function”
+模块福。“my_demo_function_alias”是“my_demo_function”的别名，因此两者
+测试用例中的代码行应调用相同的函数。
+// */
+// You should NOT modify any existing code except for adding two lines of attributes.
+
+
 
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
 mod Foo {
+    #[no_mangle]
     // No `extern` equals `extern "Rust"`.
     fn my_demo_function(a: u32) -> u32 {
         a
